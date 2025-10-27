@@ -1,0 +1,71 @@
+[
+  {
+    "id": "carnes",
+    "name": "Carnes",
+    "products": [
+      { "id": "pechuga-pollo", "name": "Pechuga de pollo (kg)" },
+      { "id": "carne-molida-res", "name": "Carne molida de res" },
+      { "id": "chuletas-cerdo", "name": "Chuletas de cerdo" },
+      { "id": "salmon", "name": "Filete de salmon" },
+      { "id": "jamon-pavo", "name": "Jamon de pavo" }
+    ]
+  },
+  {
+    "id": "lacteos",
+    "name": "Lacteos",
+    "products": [
+      { "id": "leche-descremada", "name": "Leche descremada" },
+      { "id": "yogurt-natural", "name": "Yogurt natural" },
+      { "id": "queso-rallado", "name": "Queso rallado" },
+      { "id": "mantequilla", "name": "Mantequilla" },
+      { "id": "huevos", "name": "Huevos (docena)" }
+    ]
+  },
+  {
+    "id": "panaderia",
+    "name": "Panaderia",
+    "products": [
+      { "id": "pan-integral", "name": "Pan integral" },
+      { "id": "tortillas-maiz", "name": "Tortillas de maiz" },
+      { "id": "baguette", "name": "Baguette" },
+      { "id": "pan-hamburguesa", "name": "Pan para hamburguesa" },
+      { "id": "pan-molde", "name": "Pan de molde" }
+    ]
+  },
+  {
+    "id": "frutas-verduras",
+    "name": "Frutas y verduras",
+    "products": [
+      { "id": "manzanas", "name": "Manzanas" },
+      { "id": "bananos", "name": "Bananos" },
+      { "id": "fresas", "name": "Fresas" },
+      { "id": "zanahorias", "name": "Zanahorias" },
+      { "id": "lechuga", "name": "Lechuga romana" },
+      { "id": "tomates", "name": "Tomates" },
+      { "id": "cebollas", "name": "Cebollas moradas" }
+    ]
+  },
+  {
+    "id": "despensa",
+    "name": "Despensa",
+    "products": [
+      { "id": "arroz", "name": "Arroz" },
+      { "id": "pasta", "name": "Pasta corta" },
+      { "id": "frijoles", "name": "Frijoles enlatados" },
+      { "id": "aceite-oliva", "name": "Aceite de oliva" },
+      { "id": "cafe", "name": "Cafe molido" },
+      { "id": "azucar", "name": "Azucar morena" }
+    ]
+  },
+  {
+    "id": "limpieza",
+    "name": "Limpieza",
+    "products": [
+      { "id": "detergente-ropa", "name": "Detergente para ropa" },
+      { "id": "jabon-platos", "name": "Jabon para platos" },
+      { "id": "suavizante", "name": "Suavizante" },
+      { "id": "panuelos", "name": "Panuelos desechables" },
+      { "id": "limpiahogar", "name": "Limpiador multiusos" }
+    ]
+  }
+]
