@@ -30,6 +30,8 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+        env:
+          NPM_CONFIG_OPTIONAL: "false"
 
       - name: Build
         run: npm run build
