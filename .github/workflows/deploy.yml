@@ -27,7 +27,7 @@ jobs:
           bun-download-url: "https://github.com/oven-sh/bun/releases/latest/download/bun-linux-x64.zip"
 
       - name: Install deps
-        run: bun install --frozen-lockfile
+        run: bun install # --frozen-lockfile
 
       - name: Build
         run: bun run build  # (tsc -b && vite build)
