@@ -5,6 +5,7 @@ import {
   Box,
   Button,
   ButtonGroup,
+  chakra,
   Card,
   CardBody,
   CardHeader,
@@ -16,6 +17,8 @@ import {
   Heading,
   IconButton,
   Input,
+  InputGroup,
+  InputLeftElement,
   List,
   ListItem,
   SimpleGrid,
@@ -27,6 +30,7 @@ import {
   useToast,
 } from '@chakra-ui/react'
 import { MoonIcon, SunIcon } from '@chakra-ui/icons'
+import { SearchIcon } from '@chakra-ui/icons'
 import categoriesData from './data/products.json'
 import type { Category, SelectedItem, ShoppingList } from './types/shopping'
 import './App.css'
@@ -46,6 +50,7 @@ const App = () => {
   const [listName, setListName] = useState('')
   const [shouldPersist, setShouldPersist] = useState(true)
   const [currentList, setCurrentList] = useState<ShoppingList | null>(null)
+  const [searchTerm, setSearchTerm] = useState('')
   const [savedLists, setSavedLists] = useState<ShoppingList[]>(() => {
     if (typeof window === 'undefined') return []
     try {
@@ -66,6 +71,22 @@ const App = () => {
       ),
     [selectedProducts],
   )
+
+  const filteredCategories = useMemo(() => {
+    const term = searchTerm.trim().toLowerCase()
+    if (!term) return categories
+    return categories
+      .map((category) => {
+        const filteredProducts = category.products.filter((product) =>
+          product.name.toLowerCase().includes(term),
+        )
+        return {
+          ...category,
+          products: filteredProducts,
+        }
+      })
+      .filter((category) => category.products.length > 0)
+  }, [searchTerm])
 
   const markdownPreview = useMemo(() => {
     if (!currentList) return ''
@@ -278,8 +299,46 @@ const App = () => {
 
         <Stack spacing={4}>
           <Heading size="md">Categorias</Heading>
+          <Stack
+            direction={{ base: 'column', md: 'row' }}
+            spacing={4}
+            align="stretch"
+            as="form"
+            onSubmit={(event) => event.preventDefault()}
+          >
+            <FormControl>
+              <FormLabel fontWeight="medium">Filtrar productos</FormLabel>
+              <InputGroup>
+                <InputLeftElement pointerEvents="none">
+                  <SearchIcon color="gray.400" />
+                </InputLeftElement>
+                <Input
+                  value={searchTerm}
+                  onChange={(event) => setSearchTerm(event.target.value)}
+                  placeholder="Escribe el nombre de un producto"
+                  aria-label="Filtrar productos por nombre"
+                />
+              </InputGroup>
+            </FormControl>
+            {searchTerm.trim() && (
+              <Button
+                alignSelf={{ base: 'stretch', md: 'flex-end' }}
+                onClick={() => setSearchTerm('')}
+                variant="ghost"
+              >
+                Limpiar filtro
+              </Button>
+            )}
+          </Stack>
+          {searchTerm.trim() && filteredCategories.length === 0 ? (
+            <chakra.p color="gray.500">
+              No encontramos productos que coincidan con{' '}
+              <chakra.span fontWeight="semibold">{searchTerm}</chakra.span>.
+              Intenta con otro termino.
+            </chakra.p>
+          ) : null}
           <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={{ base: 4, md: 6 }}>
-            {categories.map((category) => {
+            {filteredCategories.map((category) => {
               const currentCount = selectedProducts[category.id]?.size ?? 0
               return (
                 <Card

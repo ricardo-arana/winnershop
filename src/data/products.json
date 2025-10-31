@@ -1,71 +1,860 @@
 [
   {
-    "id": "carnes",
-    "name": "Carnes",
+    "id": "aceites",
+    "name": "Aceites",
     "products": [
-      { "id": "pechuga-pollo", "name": "Pechuga de pollo (kg)" },
-      { "id": "carne-molida-res", "name": "Carne molida de res" },
-      { "id": "chuletas-cerdo", "name": "Chuletas de cerdo" },
-      { "id": "salmon", "name": "Filete de salmon" },
-      { "id": "jamon-pavo", "name": "Jamon de pavo" }
+      {
+        "id": "aceite-vegetal",
+        "name": "Aceite vegetal"
+      },
+      {
+        "id": "aceite-de-ajonjoli",
+        "name": "Aceite de ajonjoli"
+      },
+      {
+        "id": "aceite-de-oliva",
+        "name": "Aceite de oliva"
+      }
+    ]
+  },
+  {
+    "id": "aseo-personal",
+    "name": "Aseo Personal",
+    "products": [
+      {
+        "id": "rasurados",
+        "name": "Rasurados"
+      },
+      {
+        "id": "jabón-líquido-mano",
+        "name": "Jabón líquido mano"
+      },
+      {
+        "id": "jabón-corporal-liquido-dove",
+        "name": "Jabón Corporal liquido Dove"
+      },
+      {
+        "id": "jabón-en-barra-dove",
+        "name": "Jabón en barra Dove"
+      },
+      {
+        "id": "pasta-dental",
+        "name": "pasta dental"
+      },
+      {
+        "id": "desodorante",
+        "name": "Desodorante"
+      },
+      {
+        "id": "toalla-higiénico",
+        "name": "Toalla Higiénico"
+      },
+      {
+        "id": "protector-solar",
+        "name": "Protector solar"
+      },
+      {
+        "id": "enjuague-bucal",
+        "name": "enjuague bucal"
+      },
+      {
+        "id": "crema-de-afeitar",
+        "name": "crema de afeitar"
+      },
+      {
+        "id": "hilo-dental",
+        "name": "hilo dental"
+      },
+      {
+        "id": "papel-higenico",
+        "name": "Papel Higenico"
+      },
+      {
+        "id": "pañales",
+        "name": "Pañales"
+      },
+      {
+        "id": "papel-toalla-baño",
+        "name": "papel toalla baño"
+      }
+    ]
+  },
+  {
+    "id": "bebidas",
+    "name": "Bebidas",
+    "products": [
+      {
+        "id": "gaseosa",
+        "name": "Gaseosa"
+      },
+      {
+        "id": "jugo-de-naranja",
+        "name": "Jugo de naranja"
+      },
+      {
+        "id": "agua-mineral",
+        "name": "Agua mineral"
+      },
+      {
+        "id": "jugo-de-duranzo/mango",
+        "name": "Jugo de duranzo/mango"
+      },
+      {
+        "id": "cerveza",
+        "name": "Cerveza"
+      },
+      {
+        "id": "vino",
+        "name": "Vino"
+      },
+      {
+        "id": "licor",
+        "name": "Licor"
+      }
+    ]
+  },
+  {
+    "id": "cereales",
+    "name": "Cereales",
+    "products": [
+      {
+        "id": "frejoles",
+        "name": "Frejoles"
+      },
+      {
+        "id": "lentejas",
+        "name": "Lentejas"
+      },
+      {
+        "id": "arroz",
+        "name": "Arroz"
+      },
+      {
+        "id": "maiz-popcorn",
+        "name": "Maiz popcorn"
+      },
+      {
+        "id": "avena",
+        "name": "Avena"
+      },
+      {
+        "id": "chia",
+        "name": "Chia"
+      },
+      {
+        "id": "harina",
+        "name": "Harina"
+      }
+    ]
+  },
+  {
+    "id": "elatados-y-encurtidos",
+    "name": "Elatados y encurtidos",
+    "products": [
+      {
+        "id": "atún",
+        "name": "Atún"
+      },
+      {
+        "id": "choclo-en-lata",
+        "name": "Choclo en lata"
+      },
+      {
+        "id": "aceitunas",
+        "name": "Aceitunas"
+      },
+      {
+        "id": "durazno-en-lata",
+        "name": "Durazno en lata"
+      }
+    ]
+  },
+  {
+    "id": "embutidos",
+    "name": "Embutidos",
+    "products": [
+      {
+        "id": "hotdog",
+        "name": "Hotdog"
+      },
+      {
+        "id": "jamonada-polaca",
+        "name": "Jamonada Polaca"
+      },
+      {
+        "id": "jamon-del-pais",
+        "name": "Jamon del pais"
+      },
+      {
+        "id": "chorizo",
+        "name": "Chorizo"
+      },
+      {
+        "id": "mortadela",
+        "name": "Mortadela"
+      }
+    ]
+  },
+  {
+    "id": "farmacia",
+    "name": "Farmacia",
+    "products": [
+      {
+        "id": "gaseovet",
+        "name": "gaseovet"
+      },
+      {
+        "id": "panadol",
+        "name": "panadol"
+      },
+      {
+        "id": "bactrim",
+        "name": "bactrim"
+      },
+      {
+        "id": "apronax",
+        "name": "Apronax"
+      },
+      {
+        "id": "ibuprofeno",
+        "name": "ibuprofeno"
+      },
+      {
+        "id": "enterogermina",
+        "name": "enterogermina"
+      }
+    ]
+  },
+  {
+    "id": "frutas",
+    "name": "Frutas",
+    "products": [
+      {
+        "id": "manzana",
+        "name": "manzana"
+      },
+      {
+        "id": "mandarina",
+        "name": "mandarina"
+      },
+      {
+        "id": "maracuya",
+        "name": "maracuya"
+      },
+      {
+        "id": "pera",
+        "name": "pera"
+      },
+      {
+        "id": "platano",
+        "name": "platano"
+      },
+      {
+        "id": "melocotón",
+        "name": "melocotón"
+      },
+      {
+        "id": "sandia",
+        "name": "sandia"
+      },
+      {
+        "id": "naranja",
+        "name": "naranja"
+      },
+      {
+        "id": "papayas",
+        "name": "papayas"
+      },
+      {
+        "id": "naranja",
+        "name": "naranja"
+      },
+      {
+        "id": "piña",
+        "name": "piña"
+      },
+      {
+        "id": "pitahaya",
+        "name": "Pitahaya"
+      },
+      {
+        "id": "fresas",
+        "name": "Fresas"
+      },
+      {
+        "id": "palta",
+        "name": "Palta"
+      }
+    ]
+  },
+  {
+    "id": "frutos-secos",
+    "name": "Frutos secos",
+    "products": [
+      {
+        "id": "mani",
+        "name": "mani"
+      },
+      {
+        "id": "pasas",
+        "name": "pasas"
+      },
+      {
+        "id": "almendras",
+        "name": "almendras"
+      },
+      {
+        "id": "pistachos",
+        "name": "pistachos"
+      },
+      {
+        "id": "pecanas",
+        "name": "pecanas"
+      }
+    ]
+  },
+  {
+    "id": "golosinas",
+    "name": "Golosinas",
+    "products": [
+      {
+        "id": "galletas",
+        "name": "Galletas"
+      },
+      {
+        "id": "sublime",
+        "name": "Sublime"
+      },
+      {
+        "id": "m&ns",
+        "name": "m&ns"
+      },
+      {
+        "id": "skitles",
+        "name": "Skitles"
+      },
+      {
+        "id": "gomitas",
+        "name": "Gomitas"
+      }
+    ]
+  },
+  {
+    "id": "granos-y-cereales",
+    "name": "Granos y cereales",
+    "products": [
+      {
+        "id": "azucar",
+        "name": "Azucar"
+      },
+      {
+        "id": "harina",
+        "name": "Harina"
+      },
+      {
+        "id": "cereal",
+        "name": "Cereal"
+      },
+      {
+        "id": "macana",
+        "name": "Macana"
+      },
+      {
+        "id": "fideo",
+        "name": "Fideo"
+      },
+      {
+        "id": "semola",
+        "name": "Semola"
+      },
+      {
+        "id": "frijol",
+        "name": "frijol"
+      },
+      {
+        "id": "lentejas",
+        "name": "lentejas"
+      }
+    ]
+  },
+  {
+    "id": "infusiones",
+    "name": "Infusiones",
+    "products": [
+      {
+        "id": "te-canela-y-clavo",
+        "name": "Te canela y clavo"
+      },
+      {
+        "id": "manzanilla",
+        "name": "Manzanilla"
+      },
+      {
+        "id": "hierva-luisa",
+        "name": "Hierva Luisa"
+      },
+      {
+        "id": "anis",
+        "name": "Anis"
+      },
+      {
+        "id": "emoliente",
+        "name": "Emoliente"
+      },
+      {
+        "id": "te-frutos-rojos",
+        "name": "Te Frutos rojos"
+      },
+      {
+        "id": "cacao",
+        "name": "Cacao"
+      },
+      {
+        "id": "jamaica",
+        "name": "Jamaica"
+      },
+      {
+        "id": "hinojo",
+        "name": "Hinojo"
+      },
+      {
+        "id": "cafe",
+        "name": "Cafe"
+      }
     ]
   },
   {
     "id": "lacteos",
     "name": "Lacteos",
     "products": [
-      { "id": "leche-descremada", "name": "Leche descremada" },
-      { "id": "yogurt-natural", "name": "Yogurt natural" },
-      { "id": "queso-rallado", "name": "Queso rallado" },
-      { "id": "mantequilla", "name": "Mantequilla" },
-      { "id": "huevos", "name": "Huevos (docena)" }
-    ]
-  },
-  {
-    "id": "panaderia",
-    "name": "Panaderia",
-    "products": [
-      { "id": "pan-integral", "name": "Pan integral" },
-      { "id": "tortillas-maiz", "name": "Tortillas de maiz" },
-      { "id": "baguette", "name": "Baguette" },
-      { "id": "pan-hamburguesa", "name": "Pan para hamburguesa" },
-      { "id": "pan-molde", "name": "Pan de molde" }
-    ]
-  },
-  {
-    "id": "frutas-verduras",
-    "name": "Frutas y verduras",
-    "products": [
-      { "id": "manzanas", "name": "Manzanas" },
-      { "id": "bananos", "name": "Bananos" },
-      { "id": "fresas", "name": "Fresas" },
-      { "id": "zanahorias", "name": "Zanahorias" },
-      { "id": "lechuga", "name": "Lechuga romana" },
-      { "id": "tomates", "name": "Tomates" },
-      { "id": "cebollas", "name": "Cebollas moradas" }
-    ]
-  },
-  {
-    "id": "despensa",
-    "name": "Despensa",
-    "products": [
-      { "id": "arroz", "name": "Arroz" },
-      { "id": "pasta", "name": "Pasta corta" },
-      { "id": "frijoles", "name": "Frijoles enlatados" },
-      { "id": "aceite-oliva", "name": "Aceite de oliva" },
-      { "id": "cafe", "name": "Cafe molido" },
-      { "id": "azucar", "name": "Azucar morena" }
+      {
+        "id": "leche",
+        "name": "Leche"
+      },
+      {
+        "id": "yogurt",
+        "name": "Yogurt"
+      },
+      {
+        "id": "yogurt-griego",
+        "name": "Yogurt griego"
+      },
+      {
+        "id": "queso-fresco",
+        "name": "Queso Fresco"
+      },
+      {
+        "id": "queso-mantecoso",
+        "name": "Queso Mantecoso"
+      },
+      {
+        "id": "queso-azul",
+        "name": "Queso Azul"
+      },
+      {
+        "id": "queso-mozzarela",
+        "name": "Queso mozzarela"
+      },
+      {
+        "id": "mantequilla",
+        "name": "Mantequilla"
+      },
+      {
+        "id": "helado",
+        "name": "Helado"
+      }
     ]
   },
   {
     "id": "limpieza",
     "name": "Limpieza",
     "products": [
-      { "id": "detergente-ropa", "name": "Detergente para ropa" },
-      { "id": "jabon-platos", "name": "Jabon para platos" },
-      { "id": "suavizante", "name": "Suavizante" },
-      { "id": "panuelos", "name": "Panuelos desechables" },
-      { "id": "limpiahogar", "name": "Limpiador multiusos" }
+      {
+        "id": "papel-aluminio",
+        "name": "papel aluminio"
+      },
+      {
+        "id": "papel-toalla",
+        "name": "papel toalla"
+      },
+      {
+        "id": "bolsa-de-1kg",
+        "name": "bolsa de 1kg"
+      },
+      {
+        "id": "bolsa-negra",
+        "name": "bolsa negra"
+      },
+      {
+        "id": "bolsa-tacho-bebe",
+        "name": "bolsa tacho Bebe"
+      },
+      {
+        "id": "bolsa-amarilla",
+        "name": "bolsa amarilla"
+      },
+      {
+        "id": "detergente-líquido",
+        "name": "Detergente líquido"
+      },
+      {
+        "id": "detergente-adulto-polvo",
+        "name": "Detergente adulto polvo"
+      },
+      {
+        "id": "detergente-nico",
+        "name": "detergente Nico"
+      },
+      {
+        "id": "jabón-de-lavar-ropa-caricia",
+        "name": "jabón de lavar ropa Caricia"
+      },
+      {
+        "id": "cloro",
+        "name": "cloro"
+      },
+      {
+        "id": "desinfectante",
+        "name": "desinfectante"
+      },
+      {
+        "id": "limpia-vidrios",
+        "name": "limpia vidrios"
+      },
+      {
+        "id": "saca-grasa",
+        "name": "saca grasa"
+      },
+      {
+        "id": "limpia-lavadora",
+        "name": "limpia lavadora"
+      },
+      {
+        "id": "esponja",
+        "name": "esponja"
+      },
+      {
+        "id": "lava-platos",
+        "name": "lava platos"
+      },
+      {
+        "id": "pañitos-scroth-reutilizable-(trapo-amarillo)",
+        "name": "pañitos scroth reutilizable (trapo amarillo)"
+      },
+      {
+        "id": "glade",
+        "name": "glade"
+      },
+      {
+        "id": "toallas-clorox",
+        "name": "toallas clorox"
+      },
+      {
+        "id": "bicarbonato",
+        "name": "bicarbonato"
+      }
+    ]
+  },
+  {
+    "id": "molidos-y-condimentos",
+    "name": "Molidos y condimentos",
+    "products": [
+      {
+        "id": "sal",
+        "name": "Sal"
+      },
+      {
+        "id": "pimienta",
+        "name": "Pimienta"
+      },
+      {
+        "id": "comino",
+        "name": "Comino"
+      },
+      {
+        "id": "aji-no-moto",
+        "name": "Aji no moto"
+      },
+      {
+        "id": "laurel",
+        "name": "Laurel"
+      },
+      {
+        "id": "clavo-de-olor",
+        "name": "Clavo de olor"
+      },
+      {
+        "id": "canela",
+        "name": "Canela"
+      },
+      {
+        "id": "tuco",
+        "name": "Tuco"
+      },
+      {
+        "id": "pimenton",
+        "name": "Pimenton"
+      },
+      {
+        "id": "sal-de-maras",
+        "name": "Sal de maras"
+      },
+      {
+        "id": "pimienta-entera",
+        "name": "Pimienta entera"
+      },
+      {
+        "id": "oregano",
+        "name": "Oregano"
+      },
+      {
+        "id": "orégano-en-polvo",
+        "name": "orégano en polvo"
+      },
+      {
+        "id": "culantro",
+        "name": "Culantro"
+      },
+      {
+        "id": "aji-amarillo",
+        "name": "Aji Amarillo"
+      },
+      {
+        "id": "aji-panca",
+        "name": "Aji Panca"
+      }
+    ]
+  },
+  {
+    "id": "otros",
+    "name": "Otros",
+    "products": [
+      {
+        "id": "fill",
+        "name": "fill"
+      },
+      {
+        "id": "servilleta",
+        "name": "servilleta"
+      }
+    ]
+  },
+  {
+    "id": "pastas",
+    "name": "Pastas",
+    "products": [
+      {
+        "id": "fideo-spaggeti",
+        "name": "Fideo spaggeti"
+      },
+      {
+        "id": "cabello-de-angel",
+        "name": "Cabello de angel"
+      },
+      {
+        "id": "semola",
+        "name": "semola"
+      },
+      {
+        "id": "tornillo",
+        "name": "Tornillo"
+      },
+      {
+        "id": "wantan",
+        "name": "Wantan"
+      }
+    ]
+  },
+  {
+    "id": "salsas",
+    "name": "Salsas",
+    "products": [
+      {
+        "id": "siyao",
+        "name": "Siyao"
+      },
+      {
+        "id": "salsa-de-ostión",
+        "name": "Salsa de Ostión"
+      },
+      {
+        "id": "vinagre",
+        "name": "Vinagre"
+      },
+      {
+        "id": "mayonesa",
+        "name": "Mayonesa"
+      },
+      {
+        "id": "mostaza",
+        "name": "Mostaza"
+      },
+      {
+        "id": "ketchup",
+        "name": "Ketchup"
+      },
+      {
+        "id": "aji-limo-en-salsa",
+        "name": "Aji limo en salsa"
+      }
+    ]
+  },
+  {
+    "id": "snacks",
+    "name": "Snacks",
+    "products": [
+      {
+        "id": "papas-picantes",
+        "name": "Papas picantes"
+      },
+      {
+        "id": "doritos",
+        "name": "Doritos"
+      },
+      {
+        "id": "cheetos",
+        "name": "Cheetos"
+      },
+      {
+        "id": "chifles",
+        "name": "Chifles"
+      },
+      {
+        "id": "canchita-microondas",
+        "name": "Canchita microondas"
+      }
+    ]
+  },
+  {
+    "id": "verduras",
+    "name": "Verduras",
+    "products": [
+      {
+        "id": "papa-amarilla",
+        "name": "Papa Amarilla"
+      },
+      {
+        "id": "papa-canchan",
+        "name": "Papa Canchan"
+      },
+      {
+        "id": "tomate",
+        "name": "Tomate"
+      },
+      {
+        "id": "lechuga",
+        "name": "Lechuga"
+      },
+      {
+        "id": "kion",
+        "name": "Kion"
+      },
+      {
+        "id": "zanahoria",
+        "name": "Zanahoria"
+      },
+      {
+        "id": "limón",
+        "name": "Limón"
+      },
+      {
+        "id": "yuca",
+        "name": "Yuca"
+      },
+      {
+        "id": "camote",
+        "name": "Camote"
+      },
+      {
+        "id": "olluco",
+        "name": "Olluco"
+      },
+      {
+        "id": "apio",
+        "name": "Apio"
+      },
+      {
+        "id": "zapallo",
+        "name": "Zapallo"
+      },
+      {
+        "id": "poro",
+        "name": "Poro"
+      },
+      {
+        "id": "choclo",
+        "name": "Choclo"
+      },
+      {
+        "id": "arvejas",
+        "name": "Arvejas"
+      },
+      {
+        "id": "pimiento",
+        "name": "Pimiento"
+      },
+      {
+        "id": "brocoli",
+        "name": "Brocoli"
+      }
+    ]
+  },
+  {
+    "id": "🍖carnes-y-proteínas",
+    "name": "🍖Carnes y proteínas",
+    "products": [
+      {
+        "id": "pollo",
+        "name": "pollo"
+      },
+      {
+        "id": "carne",
+        "name": "carne"
+      },
+      {
+        "id": "huevo",
+        "name": "huevo"
+      },
+      {
+        "id": "pechuga",
+        "name": "pechuga"
+      },
+      {
+        "id": "alitas",
+        "name": "alitas"
+      },
+      {
+        "id": "hígado",
+        "name": "hígado"
+      },
+      {
+        "id": "chuleta",
+        "name": "Chuleta"
+      },
+      {
+        "id": "cuy",
+        "name": "cuy"
+      },
+      {
+        "id": "pato",
+        "name": "Pato"
+      },
+      {
+        "id": "pescado",
+        "name": "Pescado"
+      },
+      {
+        "id": "marisco",
+        "name": "Marisco"
+      },
+      {
+        "id": "milanesa",
+        "name": "milanesa"
+      },
+      {
+        "id": "hamburguesa",
+        "name": "hamburguesa"
+      }
     ]
   }
 ]
