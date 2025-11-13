@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import type { ChangeEvent } from 'react'
 import {
   Badge,
@@ -51,6 +51,7 @@ const HomePage = () => {
   const [shouldPersist, setShouldPersist] = useState(true)
   const [currentList, setCurrentList] = useState<ShoppingList | null>(null)
   const [searchTerm, setSearchTerm] = useState('')
+  const listActionsRef = useRef<HTMLDivElement | null>(null)
 
   const applyListToSelection = (list: ShoppingList) => {
     setCurrentList(list)
@@ -114,6 +115,11 @@ const HomePage = () => {
       .filter((category) => category.products.length > 0)
   }, [searchTerm])
 
+  const plainTextList = useMemo(() => {
+    if (!currentList) return ''
+    return currentList.items.map((item) => item.product.name).join('\n')
+  }, [currentList])
+
   const markdownPreview = useMemo(() => {
     if (!currentList) return ''
     const lines = [
@@ -152,7 +158,7 @@ const HomePage = () => {
     })
   }
 
-  const handleGenerateList = () => {
+  const handleGenerateList = (shouldScrollToActions = false) => {
     const items = buildSelectedItems(selectedProducts)
 
     if (items.length === 0) {
@@ -194,6 +200,15 @@ const HomePage = () => {
         isClosable: true,
       })
     }
+
+    if (shouldScrollToActions) {
+      requestAnimationFrame(() => {
+        listActionsRef.current?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        })
+      })
+    }
   }
 
   const handleCopyMarkdown = async () => {
@@ -210,6 +225,29 @@ const HomePage = () => {
       toast({
         title: 'No se pudo copiar',
         description: 'Intenta de nuevo o descarga el archivo.',
+        status: 'error',
+        duration: 3000,
+        isClosable: true,
+      })
+      console.error(error)
+    }
+  }
+
+  const handleCopyPlainText = async () => {
+    if (!plainTextList) return
+    try {
+      await navigator.clipboard.writeText(plainTextList)
+      toast({
+        title: 'Lista copiada',
+        description: 'Ya tienes los productos en texto plano.',
+        status: 'success',
+        duration: 2500,
+        isClosable: true,
+      })
+    } catch (error) {
+      toast({
+        title: 'No se pudo copiar',
+        description: 'Intenta de nuevo o revisa los permisos del navegador.',
         status: 'error',
         duration: 3000,
         isClosable: true,
@@ -270,6 +308,28 @@ const HomePage = () => {
 
         <Stack spacing={4}>
           <Heading size="md">Categorias</Heading>
+          <Stack
+            direction={{ base: 'column', md: 'row' }}
+            spacing={3}
+            align="stretch"
+          >
+            <FormControl flex="1">
+              <FormLabel fontWeight="medium">Nombre de la lista</FormLabel>
+              <Input
+                value={listName}
+                onChange={(event) => setListName(event.target.value)}
+                placeholder="Ej. Compras de la semana"
+              />
+            </FormControl>
+            <Button
+              colorScheme="green"
+              alignSelf={{ base: 'stretch', md: 'flex-end' }}
+              minW={{ base: 'full', md: '220px' }}
+              onClick={() => handleGenerateList(true)}
+            >
+              Generar lista ({selectedCount})
+            </Button>
+          </Stack>
           <Stack
             direction={{ base: 'column', md: 'row' }}
             spacing={4}
@@ -358,14 +418,6 @@ const HomePage = () => {
             })}
           </SimpleGrid>
           <Stack direction={actionsDirection} spacing={4} align="stretch">
-            <FormControl>
-              <FormLabel>Nombre de la lista</FormLabel>
-              <Input
-                value={listName}
-                onChange={(event) => setListName(event.target.value)}
-                placeholder="Ej. Compras de la semana"
-              />
-            </FormControl>
             <FormControl
               display="flex"
               alignItems="center"
@@ -382,7 +434,7 @@ const HomePage = () => {
             </FormControl>
             <Button
               colorScheme="green"
-              onClick={handleGenerateList}
+              onClick={() => handleGenerateList()}
               minW={{ base: 'full', md: '200px' }}
             >
               Generar lista ({selectedCount})
@@ -415,27 +467,35 @@ const HomePage = () => {
                     {new Date(currentList.createdAt).toLocaleString()}
                   </Text>
                 </Box>
-                <ButtonGroup
-                  size="sm"
-                  variant="outline"
-                  flexWrap="wrap"
-                  justifyContent="flex-end"
-                  spacing={2}
-                >
-                  <Button onClick={handleCopyMarkdown}>Copiar Markdown</Button>
-                  <Button onClick={handleDownloadMarkdown}>
-                    Descargar .md
-                  </Button>
-                  <Button onClick={handlePrintableView}>Vista imprimible</Button>
-                  <Button
-                    onClick={() =>
-                      currentList && navigate(`/listas/${currentList.id}`)
-                    }
-                    isDisabled={!isCurrentListSaved}
+                <Box ref={listActionsRef} w="full">
+                  <ButtonGroup
+                    size="sm"
+                    variant="outline"
+                    flexWrap="wrap"
+                    justifyContent="flex-end"
+                    spacing={2}
+                    w="full"
                   >
-                    Ver detalle
-                  </Button>
-                </ButtonGroup>
+                    <Button onClick={handleCopyPlainText}>Copiar texto</Button>
+                    <Button onClick={handleCopyMarkdown}>
+                      Copiar Markdown
+                    </Button>
+                    <Button onClick={handleDownloadMarkdown}>
+                      Descargar .md
+                    </Button>
+                    <Button onClick={handlePrintableView}>
+                      Vista imprimible
+                    </Button>
+                    <Button
+                      onClick={() =>
+                        currentList && navigate(`/listas/${currentList.id}`)
+                      }
+                      isDisabled={!isCurrentListSaved}
+                    >
+                      Ver detalle
+                    </Button>
+                  </ButtonGroup>
+                </Box>
               </CardHeader>
               <Divider />
               <CardBody>
