@@ -20,10 +20,14 @@ cleanupOutdatedCaches()
 precacheAndRoute(self.__WB_MANIFEST)
 
 const fileExtensionRegexp = /[^/?]+\.[^/]+$/
+const normalizedBase = (import.meta.env.BASE_URL ?? '/').replace(/\/*$/, '')
+const appShellPath = `${normalizedBase || ''}/index.html`
+const ensureLeadingSlash = (path: string) => (path.startsWith('/') ? path : `/${path}`)
+const appShellUrl = ensureLeadingSlash(appShellPath)
 
 registerRoute(
   ({ request, url }) => request.mode === 'navigate' && !fileExtensionRegexp.test(url.pathname),
-  createHandlerBoundToURL('index.html'),
+  createHandlerBoundToURL(appShellUrl),
 )
 
 self.addEventListener('message', (event) => {

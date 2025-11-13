@@ -16,11 +16,13 @@ const theme = extendTheme({
   },
 })
 
+const routerBaseName = (import.meta.env.BASE_URL || '/').replace(/\/*$/, '') || '/'
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ChakraProvider theme={theme}>
       <ColorModeScript initialColorMode={theme.config.initialColorMode} />
-      <BrowserRouter>
+      <BrowserRouter basename={routerBaseName}>
         <App />
       </BrowserRouter>
     </ChakraProvider>
