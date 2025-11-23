@@ -32,6 +32,7 @@ import categoriesData from '../data/products.json'
 import type { Category, SelectedItem, ShoppingList } from '../types/shopping'
 import { useShoppingLists } from '../context/ShoppingListsContext'
 import { buildPrintableHtml, groupByCategory } from '../utils/list'
+import { normalizeString } from '../utils/stringUtils'
 
 const categories = categoriesData as Category[]
 
@@ -100,12 +101,12 @@ const HomePage = () => {
   )
 
   const filteredCategories = useMemo(() => {
-    const term = searchTerm.trim().toLowerCase()
+    const term = normalizeString(searchTerm)
     if (!term) return categories
     return categories
       .map((category) => {
         const filteredProducts = category.products.filter((product) =>
-          product.name.toLowerCase().includes(term),
+          normalizeString(product.name).includes(term),
         )
         return {
           ...category,
@@ -300,14 +301,9 @@ const HomePage = () => {
       <Stack spacing={{ base: 8, md: 10 }}>
         <Stack spacing={3}>
           <Heading size="xl">Arma tu lista de compras</Heading>
-          <Text color="gray.600" _dark={{ color: 'gray.300' }}>
-            Selecciona productos por categoria, guarda tus listas y accede a
-            ellas desde cualquier pagina de la app.
-          </Text>
         </Stack>
 
         <Stack spacing={4}>
-          <Heading size="md">Categorias</Heading>
           <Stack
             direction={{ base: 'column', md: 'row' }}
             spacing={3}
